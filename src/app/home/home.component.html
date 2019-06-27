@@ -1,0 +1,40 @@
+<h1>Select Dropdown</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="from-group">
+            <label for="country">Country</label>
+            <select class="form-control" placeholder="Select Country" (change)="changeCountry($event.target.value)">
+                <option value="" [disabled]="butDisabled">Select State </option>
+                <option *ngFor ="let count of countryList">{{count.name}} </option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="state">State</label>
+            <select class="form-control" placeholder="Select State"  [disabled]="butDisabled" (change)="changeState($event.target.value)">
+                <option value="">Select City </option>
+                <option *ngFor="let state of states">{{state.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="from-group">
+            <label for="country">City</label>
+            <select class="form-control" placeholder="Select Country" [disabled]="butDisabledCity">
+                <option value="">Select City </option>
+                <option *ngFor ="let city of cities">{{city}}</option>
+            </select>
+        </div>
+    </div>
+    
+</div>
+
+<button (click)="openpopup()" class="btn">Open</button>
+
+<button (click)="deleteItem()" class="btn">Delete</button>
+
+<button (click)="showSuccess()" class="btn">success</button>
+
+<app-multiselectdropdonw></app-multiselectdropdonw>
